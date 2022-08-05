@@ -32,3 +32,9 @@ resource "google_project_iam_member" "project_logging" {
   role    = "roles/logging.logWriter"
   member  = local.resource_member
 }
+
+resource "google_project_iam_member" "project_storage_viewer" {
+  project = var.project_id
+  role    = "roles/storage.objectViewer"
+  member  = local.resource_member
+}
